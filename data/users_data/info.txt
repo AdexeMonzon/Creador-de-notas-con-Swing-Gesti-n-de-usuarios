@@ -1,1 +1,0 @@
-En esta carpeta se administrarán todos los users con sus respectivas notas
