@@ -29,13 +29,11 @@ public class User {
         
         String separador = "----------------------------------";
 
-        //List<String> nuevasNotas = new ArrayList<>(notas); // TEMPORAAAALLLL
         List<String> nuevasNotas = new ArrayList<>(); 
         for (int i = 0; i < notas.size(); i++) {
             nuevasNotas.add(separador);
             nuevasNotas.add(notas.get(i));
         }
-        System.out.println(nuevasNotas);
 
         String filePath = "data/users_data/" + email + ".txt";
         try {

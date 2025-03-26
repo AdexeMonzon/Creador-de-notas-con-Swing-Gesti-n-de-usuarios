@@ -4,13 +4,12 @@
  */
 package com.notas.Interfaces;
 
-import com.notas.controller.GestorUsuarios;
-import com.notas.controller.Register;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+
+import com.notas.controller.GestorUsuarios;
+import com.notas.controller.Register;
 
 /**
  *
@@ -255,12 +254,16 @@ public class RegistrerView extends javax.swing.JFrame {
         String email = fieldEmail.getText().trim();
         String password = new String(fieldPassword.getPassword()).trim();
 
-        if (email.isEmpty() || password.isEmpty() || (!Register.verifyValidEmail(email)) || (!Register.verifyValidPassword(password))) {
-            // Mostrar mensaje de error
+        if (email.isEmpty() || password.isEmpty() || (!Register.verifyValidEmail(email)) || (!Register.verifyValidPassword(password)) || Register.validateUserCreado(email)) {
+
             if (email.isEmpty() || password.isEmpty()){
                 labelError.setText("❌ Rellena todos los campos.");
+                
             } else if ((!Register.verifyValidEmail(email)) || (!Register.verifyValidPassword(password))){
                 labelError.setText("❌ Correo o contraseña inválidos");
+                
+            } else if (Register.validateUserCreado(email)) {
+                labelError.setText("❌ Este usuario ya está creado");
             }
                 
         } else {

@@ -203,8 +203,8 @@
             </Component>
             <Component class="javax.swing.JTextField" name="fieldEmail">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="db" red="ff" type="rgb"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new java.awt.Color(255, 219, 255, 40)" type="code"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -219,6 +219,9 @@
                   <Connection code="new java.awt.Color(153, 0, 153, 40)" type="code"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fieldEmailMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botonLogin">
               <Properties>
@@ -264,8 +267,8 @@
             </Component>
             <Component class="javax.swing.JPasswordField" name="fieldPassword">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="db" red="ff" type="rgb"/>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="new java.awt.Color(255, 219, 255, 40)" type="code"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -277,6 +280,9 @@
                   <Connection code="new java.awt.Color(153, 0, 153, 40)" type="code"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fieldPasswordMouseClicked"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelNoAccount">
               <Properties>

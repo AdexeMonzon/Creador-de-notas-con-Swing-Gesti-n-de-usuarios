@@ -5,6 +5,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.List;
 
 public class Register {
 
@@ -35,5 +36,21 @@ public class Register {
         } else {
             return true;
         }
+    }
+
+    public static boolean validateUserCreado (String email) {
+        try {
+            List<String> lines = Files.readAllLines(Paths.get(USERS_FILE), StandardCharsets.UTF_8);
+            for (String line : lines) {
+                String[] parts = line.split(":");
+                if (parts.length == 2 && parts[0].trim().equals(email)) {
+                    return true;
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("❌ Error al leer el archivo de usuarios.");
+            e.printStackTrace();
+        }
+        return false;
     }
 }

@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-
 import com.notas.model.User;
 
 public class GestorUsuarios {
@@ -21,8 +20,6 @@ public class GestorUsuarios {
         return null;
     }
 
-
-    
 
 
     public static void crearTxtUser(String email) {

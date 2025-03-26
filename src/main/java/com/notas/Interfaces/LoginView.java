@@ -7,6 +7,7 @@ package com.notas.Interfaces;
 import com.notas.controller.Authenticator;
 import com.notas.controller.GestorUsuarios;
 import com.notas.model.User;
+import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -132,11 +133,16 @@ public class LoginView extends javax.swing.JFrame {
         labelEmail.setForeground(new java.awt.Color(51, 51, 51));
         labelEmail.setText("Email:");
 
-        fieldEmail.setBackground(new java.awt.Color(255, 219, 255));
+        fieldEmail.setBackground(new java.awt.Color(255, 219, 255, 40));
         fieldEmail.setBorder(null);
         fieldEmail.setCaretColor(new java.awt.Color(0, 0, 0));
         fieldEmail.setMargin(new java.awt.Insets(0, 2, 0, 2));
         fieldEmail.setSelectionColor(new java.awt.Color(153, 0, 153, 40));
+        fieldEmail.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fieldEmailMouseClicked(evt);
+            }
+        });
 
         botonLogin.setBackground(new java.awt.Color(97, 1, 124));
         botonLogin.setFont(new java.awt.Font("Euphemia", 0, 14)); // NOI18N
@@ -157,10 +163,15 @@ public class LoginView extends javax.swing.JFrame {
         labelPassword.setForeground(new java.awt.Color(51, 51, 51));
         labelPassword.setText("Password:");
 
-        fieldPassword.setBackground(new java.awt.Color(255, 219, 255));
+        fieldPassword.setBackground(new java.awt.Color(255, 219, 255, 40));
         fieldPassword.setBorder(null);
         fieldPassword.setCaretColor(new java.awt.Color(0, 0, 0));
         fieldPassword.setSelectionColor(new java.awt.Color(153, 0, 153, 40));
+        fieldPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                fieldPasswordMouseClicked(evt);
+            }
+        });
 
         labelNoAccount.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelNoAccount.setText("¿No tienes cuenta?");
@@ -294,6 +305,16 @@ public class LoginView extends javax.swing.JFrame {
         new RegistrerView().setVisible(true);
         dispose();
     }//GEN-LAST:event_labelRegistrarMouseClicked
+
+    private void fieldEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fieldEmailMouseClicked
+        // TODO add your handling code here:
+         fieldEmail.setBackground(new java.awt.Color(255, 220, 255));
+    }//GEN-LAST:event_fieldEmailMouseClicked
+
+    private void fieldPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fieldPasswordMouseClicked
+        // TODO add your handling code here:
+        fieldPassword.setBackground(new java.awt.Color(255, 220, 255));
+    }//GEN-LAST:event_fieldPasswordMouseClicked
 
     /**
      * @param args the command line arguments

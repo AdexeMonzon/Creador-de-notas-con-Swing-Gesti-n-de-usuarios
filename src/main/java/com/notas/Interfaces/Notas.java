@@ -365,6 +365,7 @@ public class Notas {
     public void editarNota () {
         int eleccion = listaNotasGuardadas.getSelectedIndex();
         almacenamientoNotas.set(eleccion, "• Título: " + tituloNota.getText() + "  |  " + textoNota.getText());
+        user.guardarNota(notesController.castDefaultListModelToList(almacenamientoNotas));
     }
 
     public void eliminarNota () {
@@ -380,6 +381,7 @@ public class Notas {
                     almacenamientoNotas.remove(eleccion[i]);
                 }
             }
+            user.guardarNota(notesController.castDefaultListModelToList(almacenamientoNotas));
         }   
     }
 
