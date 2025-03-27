@@ -22,8 +22,8 @@
 - **Swing** 🖼️: Para la interfaz gráfica de usuario.
 - **Maven** 📦: Gestión de dependencias y construcción del proyecto.
 
-### 🖥️ Cómo Ejecutar el Proyecto
-1. **Clona el repositorio**:
+### 🖥️ Cómo clonar el repositorio
+1. **Copia el siguiente comando en la carpeta que desees!**:
    ```bash
    git clone https://github.com/AdexeMonzon/Creador-de-notas-con-Swing-Gesti-n-de-usuarios.git
-   cd notas
+
