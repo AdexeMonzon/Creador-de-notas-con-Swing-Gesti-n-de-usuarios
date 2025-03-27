@@ -25,5 +25,5 @@
 ### 🖥️ Cómo Ejecutar el Proyecto
 1. **Clona el repositorio**:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
+   git clone https://github.com/AdexeMonzon/Creador-de-notas-con-Swing-Gesti-n-de-usuarios.git
    cd notas
