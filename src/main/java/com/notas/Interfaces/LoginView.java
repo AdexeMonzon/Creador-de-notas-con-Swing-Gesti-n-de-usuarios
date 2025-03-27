@@ -38,12 +38,23 @@ public class LoginView extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
+
+    public void setOpaqueLabelErrorTrue (JLabel label) {
+        label.setOpaque(true);
+    }
+    
+    public void setOpaqueLabelErrorFalse (JLabel label) {
+        label.setOpaque(false);
+    }
+
+ 
      
      public void verificationCredentials () {
         String email = fieldEmail.getText().trim();
         String password = new String(fieldPassword.getPassword()).trim();
 
         if (email.isEmpty() || password.isEmpty()) {
+            setOpaqueLabelErrorTrue(labelError);
             labelError.setText("❌ Rellena todos los campos.");
             return;
         }
@@ -69,9 +80,11 @@ public class LoginView extends javax.swing.JFrame {
                             user.setEmail(email);
                             new Notas(user.getEmail());
                         } else {
+                            setOpaqueLabelErrorTrue(labelError);
                             labelError.setText("❌ No se pudo cargar la información del usuario.");
                         }
                     } else {
+                        setOpaqueLabelErrorTrue(labelError);
                         labelError.setText("❌ Usuario o contraseña incorrectos.");
                     }
                 } catch (Exception ex) {
@@ -118,7 +131,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1.setMaximumSize(new java.awt.Dimension(1000, 1000));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 800));
 
-        panelLog.setBackground(new java.awt.Color(255, 255, 255, 40));
+        panelLog.setBackground(new java.awt.Color(255, 220, 255, 40));
         panelLog.setForeground(new java.awt.Color(255, 255, 255));
         panelLog.setToolTipText("");
         panelLog.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -133,16 +146,11 @@ public class LoginView extends javax.swing.JFrame {
         labelEmail.setForeground(new java.awt.Color(51, 51, 51));
         labelEmail.setText("Email:");
 
-        fieldEmail.setBackground(new java.awt.Color(255, 219, 255, 40));
+        fieldEmail.setBackground(new java.awt.Color(255, 220, 255));
         fieldEmail.setBorder(null);
         fieldEmail.setCaretColor(new java.awt.Color(0, 0, 0));
         fieldEmail.setMargin(new java.awt.Insets(0, 2, 0, 2));
         fieldEmail.setSelectionColor(new java.awt.Color(153, 0, 153, 40));
-        fieldEmail.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fieldEmailMouseClicked(evt);
-            }
-        });
 
         botonLogin.setBackground(new java.awt.Color(97, 1, 124));
         botonLogin.setFont(new java.awt.Font("Euphemia", 0, 14)); // NOI18N
@@ -163,15 +171,10 @@ public class LoginView extends javax.swing.JFrame {
         labelPassword.setForeground(new java.awt.Color(51, 51, 51));
         labelPassword.setText("Password:");
 
-        fieldPassword.setBackground(new java.awt.Color(255, 219, 255, 40));
+        fieldPassword.setBackground(new java.awt.Color(255, 220, 255));
         fieldPassword.setBorder(null);
         fieldPassword.setCaretColor(new java.awt.Color(0, 0, 0));
         fieldPassword.setSelectionColor(new java.awt.Color(153, 0, 153, 40));
-        fieldPassword.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                fieldPasswordMouseClicked(evt);
-            }
-        });
 
         labelNoAccount.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         labelNoAccount.setText("¿No tienes cuenta?");
@@ -188,7 +191,7 @@ public class LoginView extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(97, 1, 124));
         jSeparator1.setForeground(new java.awt.Color(97, 1, 124));
 
-        labelError.setBackground(new java.awt.Color(0, 0, 0, 0));
+        labelError.setBackground(new java.awt.Color(255, 220, 255));
         labelError.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
         labelError.setForeground(new java.awt.Color(255, 0, 0));
 
@@ -212,16 +215,14 @@ public class LoginView extends javax.swing.JFrame {
                                 .addComponent(botonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelLogLayout.createSequentialGroup()
                                     .addGap(2, 2, 2)
-                                    .addComponent(labelPassword)))
-                            .addComponent(fieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelLogLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(labelError, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addComponent(labelPassword))
+                                .addComponent(labelError, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(fieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(panelLogLayout.createSequentialGroup()
                         .addComponent(labelNoAccount)
                         .addGap(12, 12, 12)
                         .addComponent(labelRegistrar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addContainerGap(104, Short.MAX_VALUE))
         );
         panelLogLayout.setVerticalGroup(
             panelLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +245,7 @@ public class LoginView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelError, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelError, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -262,7 +263,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(289, Short.MAX_VALUE)
+                .addContainerGap(290, Short.MAX_VALUE)
                 .addComponent(panelLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(282, 282, 282))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -273,7 +274,7 @@ public class LoginView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(183, 183, 183)
                 .addComponent(panelLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addComponent(fondoPantalla, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE))
         );
@@ -305,16 +306,6 @@ public class LoginView extends javax.swing.JFrame {
         new RegistrerView().setVisible(true);
         dispose();
     }//GEN-LAST:event_labelRegistrarMouseClicked
-
-    private void fieldEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fieldEmailMouseClicked
-        // TODO add your handling code here:
-         fieldEmail.setBackground(new java.awt.Color(255, 220, 255));
-    }//GEN-LAST:event_fieldEmailMouseClicked
-
-    private void fieldPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_fieldPasswordMouseClicked
-        // TODO add your handling code here:
-        fieldPassword.setBackground(new java.awt.Color(255, 220, 255));
-    }//GEN-LAST:event_fieldPasswordMouseClicked
 
     /**
      * @param args the command line arguments

@@ -38,7 +38,7 @@ public class Notas {
     private JTextArea textoNota;
     private DefaultListModel<String> almacenamientoNotas;
     private JList<String> listaNotasGuardadas;
-    private JButton botonGuardar, botonEditar, botonEliminar, botonLimpiar, botonBuscar, botonTutorial;
+    private JButton botonGuardar, botonEditar, botonEliminar, botonLimpiar, botonBuscar, botonTutorial, botonLogOut;
     Color fondoOscuro, letrasColor, botonOscuro, bordeColor;
 
     public Notas(String email) {
@@ -172,6 +172,7 @@ public class Notas {
         botonEliminar = new JButton("Eliminar");
         botonLimpiar = new JButton("Limpiar");
         botonTutorial = new JButton("Cómo se utiliza");
+        botonLogOut = new JButton("Cerrar Sesión");
         
 
 
@@ -181,6 +182,7 @@ public class Notas {
         diseñoDeBotones(botonEliminar, new Color(187, 6, 0  ), letrasColor);
         diseñoDeBotones(botonLimpiar, botonOscuro, letrasColor);
         diseñoDeBotones(botonTutorial, botonOscuro, letrasColor);
+        diseñoDeBotones(botonLogOut, botonOscuro, Color.RED);
 
 
 
@@ -189,6 +191,7 @@ public class Notas {
         panelBotones.add(botonEliminar);
         panelBotones.add(botonLimpiar);
         panelBotones.add(botonTutorial);
+        panelBotones.add(botonLogOut);
 
         ventana.add(panelBotones, BorderLayout.SOUTH);
 
@@ -228,6 +231,7 @@ public class Notas {
         botonLimpiar.addActionListener(e -> limpiarNota());
         botonTutorial.addActionListener(e -> listenerTutorial());
         botonBuscar.addActionListener(e -> buscanota());
+        botonLogOut.addActionListener(e -> logOut());
 
         listaNotasGuardadas.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent e) {
@@ -345,9 +349,7 @@ public class Notas {
         dialogo.setVisible(true);
     }
 
-    public void cargarNotas() {
-        
-    }
+    
 
     public void guardarNota () {
         String tituloDeNota = tituloNota.getText();
@@ -400,6 +402,11 @@ public class Notas {
                 selectionModel.addSelectionInterval(i, i);
             }
         }
+    }
+
+    public void logOut ()  {
+        new LoginView().setVisible(true);
+        ventana.dispose();
     }
 
     public void verNota () {

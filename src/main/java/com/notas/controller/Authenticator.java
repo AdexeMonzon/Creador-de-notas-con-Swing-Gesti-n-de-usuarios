@@ -27,7 +27,6 @@ public class Authenticator {
             System.out.println("❌ Error al leer el archivo de usuarios.");
             e.printStackTrace();
         }
-        System.out.println("Usuario no autenticado");
         return false;
     }
 

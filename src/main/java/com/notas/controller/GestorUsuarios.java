@@ -27,7 +27,6 @@ public class GestorUsuarios {
         String filePath = Paths.get(USERS_DATA_FOLDER, fileName).toString();
         try {
             Files.createFile(Paths.get(filePath));
-            System.out.println("✔ Archivo creado para el usuario: " + email);
         } catch (IOException e) {
             System.out.println("❌ No se pudo crear el archivo para el usuario: " + email);
             e.printStackTrace();

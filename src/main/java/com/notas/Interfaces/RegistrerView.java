@@ -4,6 +4,8 @@
  */
 package com.notas.Interfaces;
 
+import java.awt.Color;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -36,8 +38,12 @@ public class RegistrerView extends javax.swing.JFrame {
         }
     }
 
-    public void submitUserInformation () {
-         
+    public void setOpaqueLabelErrorTrue (JLabel label) {
+        label.setOpaque(true);
+    }
+    
+    public void setOpaqueLabelErrorFalse (JLabel label) {
+        label.setOpaque(false);
     }
 
 
@@ -132,7 +138,7 @@ public class RegistrerView extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(97, 1, 124));
         jSeparator1.setForeground(new java.awt.Color(97, 1, 124));
 
-        labelError.setBackground(new java.awt.Color(0, 0, 0, 0));
+        labelError.setBackground(new java.awt.Color(255, 220, 255));
         labelError.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
         labelError.setForeground(new java.awt.Color(255, 0, 0));
 
@@ -190,7 +196,7 @@ public class RegistrerView extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelError, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelError, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -200,7 +206,7 @@ public class RegistrerView extends javax.swing.JFrame {
                 .addContainerGap(98, Short.MAX_VALUE))
         );
 
-        fondoPantallaRegistrer.setBackground(new java.awt.Color(51, 51, 51));
+        fondoPantallaRegistrer.setBackground(new java.awt.Color(255, 220, 255));
         fondoPantallaRegistrer.setAlignmentY(0.0F);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -257,21 +263,27 @@ public class RegistrerView extends javax.swing.JFrame {
         if (email.isEmpty() || password.isEmpty() || (!Register.verifyValidEmail(email)) || (!Register.verifyValidPassword(password)) || Register.validateUserCreado(email)) {
 
             if (email.isEmpty() || password.isEmpty()){
+                setOpaqueLabelErrorTrue(labelError);
                 labelError.setText("❌ Rellena todos los campos.");
                 
             } else if ((!Register.verifyValidEmail(email)) || (!Register.verifyValidPassword(password))){
+                setOpaqueLabelErrorTrue(labelError);
                 labelError.setText("❌ Correo o contraseña inválidos");
                 
             } else if (Register.validateUserCreado(email)) {
+                setOpaqueLabelErrorTrue(labelError);
                 labelError.setText("❌ Este usuario ya está creado");
             }
                 
         } else {
             boolean success = Register.registerUser(email, password);
             if (success) {
+                setOpaqueLabelErrorTrue(labelError);
+                labelError.setForeground(Color.CYAN);
                 labelError.setText("✅ Registrado con éxito");
                 GestorUsuarios.crearTxtUser(email);
             } else {
+                setOpaqueLabelErrorTrue(labelError);
                 labelError.setText("❌ Error al registrar el usuario");
             }
         }

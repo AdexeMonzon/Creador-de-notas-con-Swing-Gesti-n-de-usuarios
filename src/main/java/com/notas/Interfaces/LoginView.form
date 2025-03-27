@@ -60,7 +60,7 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="289" max="32767" attributes="0"/>
+                  <EmptySpace pref="290" max="32767" attributes="0"/>
                   <Component id="panelLog" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="282" max="-2" attributes="0"/>
               </Group>
@@ -74,7 +74,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="183" max="-2" attributes="0"/>
                   <Component id="panelLog" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="205" max="32767" attributes="0"/>
+                  <EmptySpace pref="197" max="32767" attributes="0"/>
               </Group>
               <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                   <Component id="fondoPantalla" alignment="0" pref="900" max="32767" attributes="0"/>
@@ -86,7 +86,7 @@
         <Container class="javax.swing.JPanel" name="panelLog">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="new java.awt.Color(255, 255, 255, 40)" type="code"/>
+              <Connection code="new java.awt.Color(255, 220, 255, 40)" type="code"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -122,12 +122,9 @@
                                           <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                                           <Component id="labelPassword" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="labelError" alignment="2" min="-2" pref="217" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="fieldPassword" alignment="2" min="-2" pref="220" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                      <Component id="labelError" min="-2" pref="217" max="-2" attributes="0"/>
-                                  </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="2" attributes="0">
@@ -136,7 +133,7 @@
                               <Component id="labelRegistrar" min="-2" pref="72" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="102" max="32767" attributes="0"/>
+                      <EmptySpace pref="104" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -164,7 +161,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="fieldPassword" min="-2" pref="25" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="labelError" min="-2" pref="12" max="-2" attributes="0"/>
+                      <Component id="labelError" min="-2" pref="20" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="botonLogin" min="-2" pref="29" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -204,7 +201,7 @@
             <Component class="javax.swing.JTextField" name="fieldEmail">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new java.awt.Color(255, 219, 255, 40)" type="code"/>
+                  <Connection code="new java.awt.Color(255, 220, 255)" type="code"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -219,9 +216,6 @@
                   <Connection code="new java.awt.Color(153, 0, 153, 40)" type="code"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fieldEmailMouseClicked"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="botonLogin">
               <Properties>
@@ -268,7 +262,7 @@
             <Component class="javax.swing.JPasswordField" name="fieldPassword">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new java.awt.Color(255, 219, 255, 40)" type="code"/>
+                  <Connection code="new java.awt.Color(255, 220, 255)" type="code"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -280,9 +274,6 @@
                   <Connection code="new java.awt.Color(153, 0, 153, 40)" type="code"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="fieldPasswordMouseClicked"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="labelNoAccount">
               <Properties>
@@ -319,7 +310,7 @@
             <Component class="javax.swing.JLabel" name="labelError">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="new java.awt.Color(0, 0, 0, 0)" type="code"/>
+                  <Connection code="new java.awt.Color(255, 220, 255)" type="code"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Dialog" size="12" style="2"/>
